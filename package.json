@@ -1,0 +1,16 @@
+{
+  "name": "ioport-hub",
+  "version": "1.0.0",
+  "packageManager": "yarn@3.4.1",
+  "private": true,
+  "scripts": {
+    "updatehub": "./Dist/install.js 'hub' 'update'",
+    "installblip": "./Dist/install.js 'blip' 'clone'",
+  },
+  "bin": {
+    "extract": "./Dist/extract.js"
+  },
+  "devDependencies": {
+    "@npmcli/package-json": "^3.0.0"   
+  }
+}
