@@ -14,4 +14,7 @@
 
 ## IOport Blip Installation (Optional)
 
-  * Run > 'yarn installblip' from the project directory. 
+  * Run > 'yarn installblip' from the project directory.
+  * To start the server use > 'yarn runblip'.
+  * Open http://localhost in your browser.
+    - Note: You'll need to have localhost configured for '127.0.0.1'.
