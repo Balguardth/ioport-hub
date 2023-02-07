@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "updatehub": "./Dist/install.js 'hub' 'update'",
-    "installblip": "./Dist/install.js 'blip' 'clone'",
+    "installblip": "./Dist/install.js 'blip' 'clone'"
   },
   "bin": {
     "extract": "./Dist/extract.js"
