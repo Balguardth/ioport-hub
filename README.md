@@ -19,3 +19,8 @@
   * To start the server use > 'yarn runblip'.
   * Open http://localhost in your browser.
     - Note: You'll need to have localhost configured for '127.0.0.1'.
+
+## Additional Documentation
+
+The full documentation can be found [here](http://www.ioport.com/Documentation) or once setup on the localhost server Documentation page.
+  
