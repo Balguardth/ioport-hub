@@ -142,7 +142,19 @@ if(args[1] == installType.update.arg){
       console.log('Proceeding...');
       // Change to working directory of application source.
       process.chdir(appInstallParams.installDir);
-      execCommand();
+
+      runGitFetch().then((err) => {
+
+        if(err) {
+
+          console.log(err);
+          process.exit(1);
+
+        }
+
+        execCommand();
+
+      });
 
     }
     else {
@@ -160,11 +172,51 @@ if(args[1] == installType.update.arg){
 
 }
 
+async function runGitFetch(){
+
+  const execYarnInstall = util.promisify(exec);
+  const promise = execYarnInstall('git fetch origin master');
+  const child = promise.child; 
+
+  child.stdout.on('data', function(data) {
+
+    console.log(data.trim());
+
+  });
+
+  child.stderr.on('data', function(data) {
+
+    console.log(data.trim());    
+
+  });
+
+  child.on('close', function(code) {
+
+    console.log('Git fetch complete.');
+
+  });
+
+  try{
+    
+    console.log('Running "git fetch" to update any available dependencies from master to local origin.');
+    const { stdout, stderr } = await promise; 
+    return false;
+
+  }  
+  catch(err) {
+
+    return err;
+
+  }
+
+}
+
 function execCommand(){
 
   exec(appInstallParams.command, (error, stdout, stderr) => {
 
       if (error) {
+
         if( String(error).includes("already exists and is not an empty directory") ){
 
           console.log("Installation directory already exists and is not empty.");
@@ -221,7 +273,7 @@ function execCommand(){
 
       }      
 
-  });
+  });  
 
 }
 
