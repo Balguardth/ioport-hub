@@ -8,4 +8,9 @@
 
   * Addressed GitHub master to origin update issue by adding a fetch process.
 
+1.0.2 / 2023-02-27
+===================
+
+  * Added file integrity registration feature.
+
  

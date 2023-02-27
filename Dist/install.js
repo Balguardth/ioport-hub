@@ -31,6 +31,7 @@ const packageUpdate = {
     },
     dependencies: {
       "connect-static-file": "^2.0.0",
+      "crypto": "^1.0.1",
       "express": "^4.18.2",
       "extract-zip": "^2.0.1",
       "ioport-blip": "workspace:*",
@@ -169,6 +170,45 @@ if(args[1] == installType.update.arg){
 } else {
 
   execCommand();
+
+}
+
+async function checkIfCurrentlyBeingUpdated(){
+
+  const execYarnInstall = util.promisify(exec);
+  const promise = execYarnInstall('git fetch origin master');
+  const child = promise.child; 
+
+  child.stdout.on('data', function(data) {
+
+    console.log(data.trim());
+
+  });
+
+  child.stderr.on('data', function(data) {
+
+    console.log(data.trim());    
+
+  });
+
+  child.on('close', function(code) {
+
+    console.log('Git fetch complete.');
+
+  });
+
+  try{
+    
+    console.log('Running "git fetch" to update any available dependencies from master to local origin.');
+    const { stdout, stderr } = await promise; 
+    return false;
+
+  }  
+  catch(err) {
+
+    return err;
+
+  }
 
 }
 

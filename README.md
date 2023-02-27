@@ -22,5 +22,5 @@
 
 ## Additional Documentation
 
-The full documentation can be found [here](http://www.ioport.com/Documentation) or once setup on the localhost server '_Documentation_' page.
+The full documentation can be found [here](https://secure.ioport.com/Documentation) or once setup on the localhost server _Documentation_ page.
   

@@ -14,7 +14,7 @@ if (!source) {
 
 extract(source, { dir: dest }).catch(function (err) {
 
-    console.error('error!', err);
+    console.error(err);
     process.exit(1);
 
   });
