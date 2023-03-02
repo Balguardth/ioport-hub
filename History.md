@@ -12,5 +12,6 @@
 ===================
 
   * Added file integrity registration feature.
+    - This is used when applications are loaded into the hub.
 
  
