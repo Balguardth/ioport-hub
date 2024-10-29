@@ -14,4 +14,8 @@
   * Added file integrity registration feature.
     - This is used when applications are loaded into the hub.
 
+1.0.3 / 2024-10-29
+===================
+
+  * Updated the Yarn packageManager version.
  
